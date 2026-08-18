@@ -84,3 +84,12 @@ Local v/s Global Installation-
 npm install -g <-package name->
 
 how to use- npm link <package name> then use.
+
+Require v/s Import==>
+ex- import {sum} from "/.math.js"
+Wer cant selectively load only the pieces we need with require but with import, we can selectively load
+only the piece we need,which can save memory.
+
+Loading is synchronus for "require" but can be asynchronus for "import".
+
+we dont use both import and require in the same project this is the bad practice.
