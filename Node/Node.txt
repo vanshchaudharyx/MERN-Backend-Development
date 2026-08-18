@@ -57,3 +57,25 @@ npm install <package-name>
 Example =>
 npm install express
 
+
+Install Packages =>
+
+1. node_modules
+- The `node_modules` folder contains all installed dependencies/packages for the project.
+- It is automatically created when we install packages.
+- We generally do not push `node_modules` to GitHub.
+
+2. package-lock.json
+- It records the exact versions of installed dependencies and their sub-dependencies.
+- It helps ensure the same dependency versions are installed across different environments.
+
+3. package.json
+- It contains project metadata such as name, version, scripts and dependencies.
+- It keeps track of the packages required by the project.
+
+Creating package.json =>
+- We can create a `package.json` file using:
+
+  npm init
+
+- `npm init` asks some questions and then creates the `package.json` file.
