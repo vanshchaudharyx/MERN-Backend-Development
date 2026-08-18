@@ -40,3 +40,20 @@ Node.js will execute the JavaScript file and show the output in the terminal.
 Process object=>
 -Process-This object provides information about,and control over,the current Node.js process.
 -Process.argv-returns an array containing the command-line arguements passed when the node.js process was launched
+
+
+
+NPM (Node Package Manager) => Standard package manager for Node.js.
+
+- It is used to install, manage and share JavaScript/Node.js packages.
+- NPM has an online registry containing thousands of useful packages.
+- It is a command-line tool.
+- NPM is installed automatically with Node.js.
+- It is used to manage project dependencies.
+
+Installing a package =>
+npm install <package-name>
+
+Example =>
+npm install express
+
