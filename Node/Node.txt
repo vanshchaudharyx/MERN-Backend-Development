@@ -79,3 +79,8 @@ Creating package.json =>
   npm init
 
 - `npm init` asks some questions and then creates the `package.json` file.
+
+Local v/s Global Installation-
+npm install -g <-package name->
+
+how to use- npm link <package name> then use.
