@@ -18,3 +18,15 @@ app.get("/:username/:id", (req, res) => {
   res.send(`Welcome to the page of ${username}`);
   //We can also send html
 });
+
+//Query Strings==>
+// We send additional information in the form of query strings that info will store in query parameter of app.get's request object.
+app.get("/search", (req, res) => {
+  console.log(req.query); //{ q: '"Vansh"' }
+  //we can also storein the form of ↓
+  // let {q}=req.query;
+  //res.send(q);
+  res.send("No results"); //we can also send html based response.
+  // res.send(`<h1> search result :${}`); Like this
+});
+
