@@ -1,0 +1,27 @@
+Express.js =>
+A Node.js web application framework used to build web applications and APIs.
+
+- It is used for server-side programming.
+- It simplifies the process of creating web servers using Node.js.
+
+Major Use Cases =>
+- Listen for incoming HTTP requests.
+- Parse/process request data.
+- Match requests with appropriate routes.
+- Send suitable responses to clients.
+- Build web servers and REST APIs.
+
+Node.js   → JavaScript runtime
+Express.js → Web framework built on Node.js
+
+Client
+  ↓
+HTTP Request
+  ↓
+Express.js
+  ↓
+Route / Middleware
+  ↓
+Response
+  ↓
+Client
