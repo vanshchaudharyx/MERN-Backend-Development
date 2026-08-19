@@ -25,3 +25,7 @@ Route / Middleware
 Response
   ↓
 Client
+
+Nodemon-->To automatically restart server with code changes.
+Generally we save nodemon globally
+
