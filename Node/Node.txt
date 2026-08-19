@@ -93,3 +93,10 @@ only the piece we need,which can save memory.
 Loading is synchronus for "require" but can be asynchronus for "import".
 
 we dont use both import and require in the same project this is the bad practice.
+
+
+Library- A library is a collection of pre-written code that can be used to perform specific task
+eg-axios
+
+Framework-A framework is a set of pre-written code that provides a structure for developing software applications.
+eg-express
