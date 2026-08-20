@@ -2,3 +2,15 @@ Templating==>
 EJS(Embedded JavaScript templates)
 EJS is a simple templating language that lets you generate HTML markup with plain javascript.\
 This is very popular templating tools.
+
+Interpolation Syntax =>
+Interpolation refers to embedding expressions into marked-up text.
+
+- It is used to make EJS templates dynamic.
+- EJS allows us to embed JavaScript expressions inside HTML.
+- Interpolation syntax is:
+
+  <%= expression %> ==> Output the value into the template.
+
+Example:
+<h1>Hello <%= name %></h1>

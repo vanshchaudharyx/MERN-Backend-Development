@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 //Now we think how response.render knows where our home.ejs is located, this is because express by default search views directory.
 //Tp tackle this problem we use=>
-app.get("views", path.join(__dirname, "/views")); //This path is a package and nened to require.
+app.set("views", path.join(__dirname, "/views")); //This path is a package and nened to require.
 //This __dirname is the current working directory of index.js. This both combine and gives exact path to express.
 app.get("/hello", (req, res) => {
   console.log("This is root");
