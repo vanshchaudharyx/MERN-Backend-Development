@@ -35,3 +35,10 @@ app.get("/rolldice", (req, res) => {
   // We dont generate data in EJS file.
   // we store data here
 });
+
+//Route for instagram.
+app.get("/ig/:username", (req, res) => {
+  let { username } = req.params;
+  // console.log(username);
+  res.render("instagram.ejs",{username})
+});
