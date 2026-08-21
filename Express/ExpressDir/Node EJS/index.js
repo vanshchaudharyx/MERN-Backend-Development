@@ -42,7 +42,8 @@ app.get("/getSix", (req, res) => {
 
 //Route for instagram.
 app.get("/ig/:username", (req, res) => {
+  const followers = ["adam", "bob", "alice", "abc"];
   let { username } = req.params;
   // console.log(username);
-  res.render("instagram.ejs", { username });
+  res.render("instagram.ejs", { username,followers});
 });
