@@ -29,16 +29,20 @@ app.listen(port, () => {
 app.get("/rolldice", (req, res) => {
   //Alternate way=>
   res.render("rolldice.ejs");
-  //let diceVal=Math.floor(Math.random()*6)+1;
+  // let diceVal=Math.floor(Math.random()*6)+1;
   //res.render("rolldice.ejs",{num:diceVal});
   //Now we access key in ejs file.
   // We dont generate data in EJS file.
   // we store data here
+});
+app.get("/getSix", (req, res) => {
+  let diceVal = Math.floor(Math.random() * 6) + 1;
+  res.render("getSixDice.ejs", { diceVal });
 });
 
 //Route for instagram.
 app.get("/ig/:username", (req, res) => {
   let { username } = req.params;
   // console.log(username);
-  res.render("instagram.ejs",{username})
+  res.render("instagram.ejs", { username });
 });
