@@ -24,3 +24,14 @@ app.get("/hello", (req, res) => {
 app.listen(port, () => {
   console.log("Listening on port", port);
 });
+
+// Passing data to EJS==>
+app.get("/rolldice", (req, res) => {
+  //Alternate way=>
+  res.render("rolldice.ejs");
+  //let diceVal=Math.floor(Math.random()*6)+1;
+  //res.render("rolldice.ejs",{num:diceVal});
+  //Now we access key in ejs file.
+  // We dont generate data in EJS file.
+  // we store data here
+});
