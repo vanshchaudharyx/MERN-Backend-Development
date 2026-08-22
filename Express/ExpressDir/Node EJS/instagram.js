@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const path = require("path");
+app.use(express.static("public")); //For public files we have public folder same as views.
 app.listen(port, () => {
   console.log("Listening on port", port);
 });

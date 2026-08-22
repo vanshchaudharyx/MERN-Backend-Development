@@ -14,3 +14,27 @@ Interpolation refers to embedding expressions into marked-up text.
 
 Example:
 <h1>Hello <%= name %></h1>
+
+Serving Static Files ==>
+
+Static files are files like HTML, CSS, JavaScript, images, etc.
+that are served directly to the client without dynamic processing.
+
+To serve static files in Express:
+
+app.use(express.static(folder_name));
+
+Example:
+
+app.use(express.static(path.join(__dirname, "public")));
+
+Here, "public" is the folder containing our static files.
+
+express.static() is built-in Express middleware.
+
+ExpressDir/
+├── index.js
+└── public/
+    ├── style.css
+    ├── script.js
+    └── images/
