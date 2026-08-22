@@ -1,0 +1,35 @@
+Get and Post Requests ==>
+
+GET -->
+- Used to request/get data or a resource from the server.
+- Data can be sent through query strings.
+- Query string data is visible in the URL.
+- Query strings are generally used for small amounts of data.
+- URL length has practical limits, so GET is not suitable for large amounts of data.
+- GET requests should generally be used for retrieving data, not for sending sensitive data.
+
+eg---------/ search?username=vansh&age=21
+
+
+POST Requests ==>
+
+- Used to send data to the server (commonly for Create/Write operations).
+- Data is sent through the request body.
+- Request body can contain different types of data such as JSON, form data, text, files, etc.
+- Data sent in the body is not displayed in the URL.
+- Commonly used when submitting forms or creating/updating resources.
+
+Simple comparison
+GET
+→ Request/retrieve data
+→ Data usually in URL/query string
+→ Visible in URL
+
+POST
+→ Send data to server
+→ Data in request body
+→ Not visible in URL
+
+Simply Remember==>
+GET → Browser asks the server for data.
+POST → Browser sends data to the server.
