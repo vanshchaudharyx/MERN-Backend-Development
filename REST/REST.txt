@@ -10,3 +10,17 @@ Example of RESTful APIs=>
 Twitter apis are build on REST concept.
 
 Documentation-https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/j
+
+CRUD operations->
+Get-retrieves resource.
+Post-submits new data to server.
+Put-updates existing data.
+Patch-update existing data.
+Delete-remove data.
+
+Creating RESTful APIs->
+Get      /post       to get data for all posts
+Post     /posts      to add a new post
+Get      /posts/:id  to get one post(using id).
+Patch    /posts/:id  to update specific post
+Delete   /posts/:id  to delete specific post
