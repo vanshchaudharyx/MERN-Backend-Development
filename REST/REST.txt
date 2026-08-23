@@ -1,0 +1,12 @@
+REST=> Representational State Transfer
+
+- REST is an architectural style that defines a set of constraints
+  for creating web services.
+- REST is an important concept in web development.
+- Using REST principles, we design/write APIs.
+- We will use RESTful APIs for performing CRUD operations.
+
+Example of RESTful APIs=>
+Twitter apis are build on REST concept.
+
+Documentation-https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/j
