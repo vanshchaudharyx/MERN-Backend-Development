@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+
+<body>
+    <h2>Edit your post</h2>
+    <p>Post id :<%=post.id%>
+    </p>
+    <p>Post username:<%=post.username %>
+    </p>
+    <!-- We dont directly send patch request by html form but we use package called method-override -->
+    <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+        <textarea name="content"><%=post.content%></textarea>
+        <button>Submit</button>
+    </form>
+
+</body>
+
+</html>
