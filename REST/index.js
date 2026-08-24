@@ -18,18 +18,18 @@ app.get("/", (req, res) => {
 let posts = [
   {
     id: uuidv4(),
-    username: "apna college",
+    username: "Apna college",
     content: "I love coding",
   },
   {
     id: uuidv4(),
-    username: "vansh chaudhary",
+    username: "Vansh chaudhary",
     content: "Hardwork is important to achieve success",
   },
   {
     id: uuidv4(),
-    username: "rahul kumar",
-    content: "I got selected for my first internship",
+    username: "Vansh Chaudhary",
+    content: "I got selected for my first internship and i got PPO",
   },
 ];
 // Get data of all posts.
@@ -94,6 +94,15 @@ app.get("/posts/:id/edit", (req, res) => {
   let { id } = req.params;
   let post = posts.find((p) => id === p.id);
   res.render("edit.ejs", { post });
+});
+//Implement : /post/:id
+//Destroy Route
+//Delete /posts/:id  to delete specific post.
+app.delete("/posts/:id", (req, res) => {
+  let { id } = req.params;
+  posts = posts.filter((p) => id !== p.id);
+  // res.send("delete success");
+  res.redirect("/posts");
 });
 
 app.listen(port, () => {

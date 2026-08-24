@@ -21,6 +21,8 @@
             <br>
             <a href="http://localhost:8080/posts/<%=post.id%>">See in detail</a>
             <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
+            <!-- We dont directly send patch request by html form but we use package called method-override -->
+            <form method="post" action="/posts/<%=post.id%>?_method=DELETE"><button>Delete Post</button></form>
         </div>
 
 
