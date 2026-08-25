@@ -4,3 +4,31 @@ How we can do CRUD operations on our database through backend.
 In this module we use a package called Faker.
 This is used to generate fake data.
 Installation link---npm i @faker-js/faker
+
+
+My Sql2 Package-> To connect Node with MySql.
+
+              CLIENT / FRONTEND
+                     │
+                     │ HTTP Request
+                     ▼
+             NODE.JS + EXPRESS
+                  (SERVER)
+                     │
+                     │ SQL Query
+                     ▼
+                DATABASE
+                 (MySQL)
+                     │
+                     │ Query Result
+                     ▼
+             NODE.JS + EXPRESS
+                  (SERVER)
+                     │
+                     │ HTTP Response
+                     ▼
+              CLIENT / FRONTEND
+
+
+Using SQL from CLI-->
+mysql -u root -p (run this command)
