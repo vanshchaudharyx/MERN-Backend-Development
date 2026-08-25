@@ -14,11 +14,15 @@ const connection = mysql.createConnection({
 
 //Now our connection in build, how to use it?
 // Use query method available in connection.
+
 try {
   connection.query("Show tables", (err, result) => {
+    //We can also write this query in a variable and pass in it.
     if (err) throw err;
-    console.log(result); //[ { Tables_in_delta_app: 'temp' } ]
+    console.log(result); //[ { Tables_in_delta_app: 'temp' } ] //This result is actually an array.
     //After the execution of this we can observe our connection doesn't stop.
+    console.log(result.length);
+    console.log(result[0]);
     connection.end(); //to close connection.
   });
 } catch (err) {
