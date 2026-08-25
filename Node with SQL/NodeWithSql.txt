@@ -32,3 +32,20 @@ My Sql2 Package-> To connect Node with MySql.
 
 Using SQL from CLI-->
 mysql -u root -p (run this command)
+
+We can also make sql file to run it.
+eg schema.sql
+We can write command in this file and open our SQL cli and type source file .sql
+
+
+schema.sql
+    ↓
+Write SQL commands
+    ↓
+Open MySQL CLI
+    ↓
+source schema.sql;
+    ↓
+MySQL executes all commands
+    ↓
+Database / Tables created
