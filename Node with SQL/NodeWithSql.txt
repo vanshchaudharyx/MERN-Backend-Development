@@ -1,0 +1,6 @@
+In this module we will see how we can use our database in our backend.
+How we can do CRUD operations on our database through backend.
+
+In this module we use a package called Faker.
+This is used to generate fake data.
+Installation link---npm i @faker-js/faker
