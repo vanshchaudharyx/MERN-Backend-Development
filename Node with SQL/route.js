@@ -42,6 +42,20 @@ app.get("/", (req, res) => {
   }
 });
 
+//Get/user Fetch and show (userId,username,email) for all users.
+app.get("/user", (req, res) => {
+  let query = "Select id,username,email from user;";
+  try {
+    connection.query(query, (err, result) => {
+      if (err) throw err;
+      // res.send(result);
+      res.render("showusers.ejs", { result });
+    });
+  } catch (err) {
+    res.send("Some error occured:", err);
+  }
+});
+
 app.listen("8080", () => {
   console.log("Server is listening to 8080");
 });
