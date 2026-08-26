@@ -49,3 +49,11 @@ source schema.sql;
 MySQL executes all commands
     ↓
 Database / Tables created
+
+Now we will come on routing using REST concept.
+
+Get        / => show no of users in db
+Get        /user => show users(email,id,username)
+Patch      /user/:id => username edit
+Post       /user => new user
+Delete     /user/:id => user delete
