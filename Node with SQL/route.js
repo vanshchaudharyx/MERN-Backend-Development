@@ -1,10 +1,14 @@
-const { faker } = require("@faker-js/faker");
+const { faker, tr } = require("@faker-js/faker");
 const mysql = require("mysql2");
 require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 
+app.use(methodOverride("__method"));
+// We send a patch request and get form data to parse this data we use middleware.
+app.use(express.urlencoded({ extended: true }));
 app.set("viewengine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
@@ -50,6 +54,50 @@ app.get("/user", (req, res) => {
       if (err) throw err;
       // res.send(result);
       res.render("showusers.ejs", { result });
+    });
+  } catch (err) {
+    res.send("Some error occured:", err);
+  }
+});
+
+// Edit Route==> /user/:id/edit==> To get form to edit the username,based on id This form will require a password.
+app.get("/user/:id/edit", (req, res) => {
+  let { id } = req.params;
+  //Search user on the basis of id.
+  let query = `Select * from user where id='${id}'`;
+  try {
+    connection.query(query, (err, result) => {
+      if (err) throw err;
+      // console.log(result);
+      let user = result[0];
+      res.render("edit.ejs", { user });
+    });
+  } catch (err) {
+    res.send("Some error occured:", err);
+  }
+});
+
+// Update (DB) Route
+app.patch("/user/:id", (req, res) => {
+  // res.send("updated");
+  let { id } = req.params;
+  let { password: formPass, username: newUsername } = req.body;
+  let query = `Select * from user where id='${id}'`;
+
+  try {
+    connection.query(query, (err, result) => {
+      if (err) throw err;
+      let user = result[0];
+      if (formPass.trim() !== user.password.trim()) {
+        res.render("wrongpassword.ejs");
+      } else {
+        let query2 = `Update user Set username='${newUsername}' where id='${id}'`;
+        connection.query(query2, (err, result) => {
+          if (err) throw err;
+          // res.send(result);
+          res.redirect("/user");
+        });
+      }
     });
   } catch (err) {
     res.send("Some error occured:", err);
