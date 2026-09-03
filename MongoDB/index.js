@@ -25,5 +25,32 @@ const userSchema = new mongoose.Schema({
 //How we store document on mongoose.
 // Models==> Model in mongoose is a class with which we construct documents
 
-// const User = mongoose.model("User", userSchema); //Mongosdb automatically convert singular collection into plural.
-const Employee = mongoose.model("Employee", userSchema);
+const User = mongoose.model("User", userSchema); //Mongosdb automatically convert singular collection into plural.
+// const Employee = mongoose.model("Employee", userSchema);
+
+//Insert==> Inserting one
+// const user1 = new User({ name: "Adam", email: "adam@yahoo.in", age: 22 });
+// const user2 = new User({ name: "Eve", email: "eve@google.com", age: 22 });
+//At this time this only load in memory but not in db.
+// user1.save(); //This save is also an asynchronus function return an promise.
+// user2
+//   .save()
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+//Inserting Multiple==>
+User.insertMany([
+  { name: "Tony", email: "tony@gmail.com", age: 21 },
+  { name: "Bruce", email: "bruce@gmail.com", age: 22 },
+  { name: "Peter", email: "peter@gmail.com", age: 22 },
+]).then((data) => {
+  console.log(data);
+});
+
+//Note
+// Mongoose uses Operation Buffering
+// Mongoose lets you start using your models immediately,without waiting for mongoose to establish a connection to MongoDB.
