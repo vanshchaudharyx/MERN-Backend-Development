@@ -43,14 +43,25 @@ const User = mongoose.model("User", userSchema); //Mongosdb automatically conver
 //   });
 
 //Inserting Multiple==>
-User.insertMany([
-  { name: "Tony", email: "tony@gmail.com", age: 21 },
-  { name: "Bruce", email: "bruce@gmail.com", age: 22 },
-  { name: "Peter", email: "peter@gmail.com", age: 22 },
-]).then((data) => {
-  console.log(data);
-});
+// User.insertMany([
+//   { name: "Tony", email: "tony@gmail.com", age: 21 },
+//   { name: "Bruce", email: "bruce@gmail.com", age: 22 },
+//   { name: "Peter", email: "peter@gmail.com", age: 22 },
+// ]).then((data) => {
+//   console.log(data);
+// });
 
 //Note
 // Mongoose uses Operation Buffering
 // Mongoose lets you start using your models immediately,without waiting for mongoose to establish a connection to MongoDB.
+
+//Find operation==>
+// Model .find() //returns a Query Object(thennable).
+// * Mongoose Queries are not promises.But they have a .then().
+User.find({})
+  .then((res) => {
+    console.log(res); //we can also console.log(res[0].name);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
