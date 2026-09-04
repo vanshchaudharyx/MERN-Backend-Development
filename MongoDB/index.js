@@ -91,3 +91,15 @@ User.findOneAndUpdate(
   });
 
 //Also we can do that model.findByIdAndUpdate()
+
+// DELETE==>
+// Model.deleteOne() //return count
+// Model.deleteMany() //return count
+User.deleteOne({ name: "Peter" }).then((res) => {
+  console.log(res);
+});
+//This above delete method do not showed that what is deleted
+
+// These methods shows which value is deleted
+// Model.findByIdAndDelete()
+// model.findOneAndDelete()
