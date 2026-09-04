@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Whatsapp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .chat {
+            background-color: white;
+            width: 350px;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat p {
+            margin: 8px 0;
+        }
+
+        .msg {
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>All chats</h3>
+    <% for (let chat of chats){%>
+        <div class="chat">
+            <p>From: <%=chat.from %>
+            </p>
+            <div class="msg">
+                <p>Message:<%=chat.msg%>
+                </p>
+            </div>
+            <p>Recieved by <%=chat.to%>
+            </p>
+        </div>
+        <%}%>
+</body>
+
+</html>
