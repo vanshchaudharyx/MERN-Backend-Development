@@ -23,6 +23,8 @@ const bookSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
+    //Validator custom error
+    min: [1, "Price is too low for selling"], // price: ValidatorError: Price is too low for selling
   },
   //if we do not follow type conatraint then there is validation failed error.
 });
@@ -49,3 +51,17 @@ book1
 // All rules that are defined in schema that work only time of insertion not in the time of updation
 //if we want that rules will work in the time of updation then we have a option that need to set true.
 // runValidators:true
+
+// Sometimes we have errors in validators , we can also change errors
+
+// Book.findByIdAndUpdate(
+//   "6a9a453a3b49dc00f4186b5c",
+//   { price: -500 },
+//   { runValidators: true },
+// )
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   }); //price: ValidatorError: Price is too low for selling
