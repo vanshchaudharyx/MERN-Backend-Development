@@ -65,3 +65,29 @@ User.find({})
   .catch((err) => {
     console.log(err);
   });
+
+// Update==> model.updateOne()  ,,model.updateMany()
+//This method also return a thennable object.
+User.updateOne({ name: "Bruce" }, { age: 23 })
+  .then((res) => {
+    console.log(res); //Gives object in result.
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+// Model.findOneAndUpdate()
+User.findOneAndUpdate(
+  { name: "Bruce" },
+  { email: "bruce1233@gmail.com" },
+  { new: true },
+)
+  //New returns the modified document rather than the original document.
+  .then((res) => {
+    console.log(res); //Gives object in result.
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+//Also we can do that model.findByIdAndUpdate()
