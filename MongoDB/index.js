@@ -103,3 +103,5 @@ User.deleteOne({ name: "Peter" }).then((res) => {
 // These methods shows which value is deleted
 // Model.findByIdAndDelete()
 // model.findOneAndDelete()
+
+
