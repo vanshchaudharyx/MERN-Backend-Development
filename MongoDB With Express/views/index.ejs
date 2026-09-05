@@ -36,6 +36,20 @@
             border-radius: 8px;
             margin: 10px 0;
         }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            background-color: rgb(169, 105, 105);
+        }
     </style>
 </head>
 
@@ -53,6 +67,15 @@
             </div>
             <p>Recieved by <%=chat.to%>
             </p>
+            <hr />
+            <p>
+                <%=chat.created_at.toString().split(" ")[4]%><br />
+            </p>
+             <p>
+                <%=chat.created_at.toString().split(" ").slice(0,4).join(" ")%><br />
+            </p>
+
+
         </div>
         <%}%>
 </body>
