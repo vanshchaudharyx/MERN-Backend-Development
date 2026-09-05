@@ -78,8 +78,8 @@ MERN-Backend-Development/
 ├── README.md
 └── ...
 
----
-
 ## 👨‍💻 Author
 
 **Vansh Chaudhary**
+
+BTech CSE Student
