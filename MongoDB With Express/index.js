@@ -5,6 +5,7 @@ const path = require("path");
 const Chat = require("./models/chats.js");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
 main().then(() => {
   console.log("Connection Successful");
@@ -36,6 +37,40 @@ app.get("/chats", async (req, res) => {
   // res.send("working");
   res.render("index.ejs", { chats });
 });
+// New and Create Route==>
+// GET --> /chats/new
+// POST --> /chats
+//For Creating new chat we create a button on main page from that button there is a get request on (/chats/new).
+// And that /chats/new renders a form that will post message on /chats route.
+
+// New route-->
+
+app.get("/chats/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+//Create Route-->
+app.post("/chats", (req, res) => {
+  let { from, to, msg } = req.body; //We dont directly get data from body we need to parse that data.
+  let newChat = new Chat({
+    from: from,
+    to: to,
+    msg: msg,
+    created_at: new Date(),
+  });
+  newChat
+    .save()
+    .then((res) => {
+      console.log("Chat was saved");
+    })
+    .then((err) => {
+      console.log(err);
+    });
+  res.redirect("/chats");
+  // console.log(newChat);
+  // res.send("Working");
+});
+
 app.get("/", (req, res) => {
   res.send("root is working");
 });

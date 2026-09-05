@@ -31,7 +31,7 @@
         }
 
         .msg {
-            background-color: #e8f5e9;
+            background-color: #4d5ca7;
             padding: 10px;
             border-radius: 8px;
             margin: 10px 0;
@@ -40,6 +40,8 @@
 </head>
 
 <body>
+    <form method="GET" action="/chats/new"><button>New Chat</button></form>
+    <br />
     <h3>All chats</h3>
     <% for (let chat of chats){%>
         <div class="chat">
