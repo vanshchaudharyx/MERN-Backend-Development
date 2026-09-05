@@ -64,6 +64,9 @@
             <div class="msg">
                 <p>Message:<%=chat.msg%>
                 </p>
+                <form method="GET" action="/chats/<%=chat._id%>/edit">
+                    <button id="editbutton">Edit</button>
+                </form>
             </div>
             <p>Recieved by <%=chat.to%>
             </p>
