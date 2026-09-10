@@ -59,6 +59,10 @@ app.get("/random", (req, res) => {
   res.send("This is a random page");
 });
 
+app.get("/wrong", (req, res) => {
+   abcd = abcd;//This gives error
+});
+
 app.listen(8080, () => {
   console.log("Server listening to port 8080");
 });

@@ -68,3 +68,7 @@ Lets create a middleware for an api that checks if the access token was passed i
 
 For ex-->
  /api--> res.send(data) but this sends data only when in api req's string contain /api ?token=give access
+
+ Handling Errors---> 
+ Express Default Error Handler
+ 
