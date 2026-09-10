@@ -27,6 +27,19 @@ app.use("/random", (req, res, next) => {
   console.log("I m  only for random");
 });
 
+// API token as a query string. 
+app.use("/api", (req, res, next) => {
+  let { token } = req.query;
+  if (token === "giveaccess") {
+    next();
+  }
+  res.send("ACCESS DENIED");
+});
+app.get("/api", (req, res) => {
+  res.send("data");
+});
+
+
 app.get("/", (req, res) => {
   res.send("Hii! I m root");
 });
