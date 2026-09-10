@@ -1,0 +1,34 @@
+Middleware-->
+It is an intermediary
+
+Request---->Middleware---->Response
+
+in Express
+Middleware in Express are functions that come into play after
+the server recieves the request and before the response is sent to the client.
+
+                        Basic flow:
+
+                        Client
+                        ↓
+                        Request
+                        ↓
+                        Middleware
+                        ↓
+                        Route Handler
+                        ↓
+                        Response
+                        ↓
+                        Client
+
+Common Middleware functions:
+-methodOverride
+-bodyParser
+-express.static-->Used for serving backend static files to frontend/client.
+-express.urlencoded    
+
+
+Properties of middlewares-->
+1- Middleware access the req and response object.
+2- Chaining is possible  like one function send control to other to another.
+3- Middleware itself send a response to stop chaining.
