@@ -27,7 +27,7 @@ app.use("/random", (req, res, next) => {
   console.log("I m  only for random");
 });
 
-// API token as a query string. 
+// API token as a query string.
 app.use("/api", (req, res, next) => {
   let { token } = req.query;
   if (token === "giveaccess") {
@@ -39,6 +39,17 @@ app.get("/api", (req, res) => {
   res.send("data");
 });
 
+// Passing multiple middlewares, Alternate way of above code.
+const checkToken = (req, res, next) => {
+  let { token } = req.query;
+  if (token === "giveaccess") {
+    next();
+  }
+  res.send("ACCESS DENIED");
+};
+app.get("/api", checkToken, (req, res) => {
+  res.send("data");
+});
 
 app.get("/", (req, res) => {
   res.send("Hii! I m root");
