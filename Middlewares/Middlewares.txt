@@ -60,3 +60,5 @@ app.use((req,res,next)=>{
 In real life projects there is the logger file with each project.
 By this we can judge when req comes when response send ,latency of Server/API.
 
+
+Our middlewares are worked as callbacks in app.use().

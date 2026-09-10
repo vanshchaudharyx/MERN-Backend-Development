@@ -17,9 +17,14 @@ const app = express();
 //   next();
 // });
 //Logger
-app.use((req, res, next) => {
-  req.Time = new Date(Date.now()).toString();
-  console.log(req.method, req.path, req.time, req.hostname);
+// app.use((req, res, next) => {
+//   req.Time = new Date(Date.now()).toString();
+//   console.log(req.method, req.path, req.time, req.hostname);
+// });
+
+// We can also define middleware for specific path
+app.use("/random", (req, res, next) => {
+  console.log("I m  only for random");
 });
 
 app.get("/", (req, res) => {
