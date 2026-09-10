@@ -49,3 +49,14 @@ app.use((req,res,next)=>{
 })
 If the current middleware function does not end the request-response cycle,
 it must call next() to pass control to the next middleware function.
+
+Creating Utility Middleware-->
+Logger--> log(prints useful information on console).
+
+app.use((req,res,next)=>{
+    req.responseTime=new Date(Date.now().toString());
+    console.log(req.method,req.path,req.responseTime,req.hostname);
+});
+In real life projects there is the logger file with each project.
+By this we can judge when req comes when response send ,latency of Server/API.
+
