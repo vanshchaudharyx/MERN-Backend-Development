@@ -39,3 +39,13 @@ Properties of middlewares-->
 1- Middleware access the req and response object.
 2- Chaining is possible  like one function send control to other to another.
 3- Middleware itself send a response to stop chaining.
+
+Using next-->
+The next middleware function is commonly denoted by a variable named text
+
+app.use((req,res,next)=>{
+    console.log("Time:",Date.now())
+    next();
+})
+If the current middleware function does not end the request-response cycle,
+it must call next() to pass control to the next middleware function.
