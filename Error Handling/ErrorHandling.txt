@@ -1,0 +1,11 @@
+Error Handling-->
+Whenever error comes in our code always express's default error hanler is triggered.
+
+But we also define our custom errors.
+
+Error handling middleware--
+
+app.use((err,req,res,next)=>{
+    console.log(err.stack);
+    res.status(500).send("Something broke!");
+});
