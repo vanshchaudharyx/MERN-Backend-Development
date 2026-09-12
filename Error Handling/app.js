@@ -6,6 +6,11 @@ app.get("/err", (req, res) => {
   abcd = abcd;
 });
 
+//Create an admin route and send an error with a 403 status code.
+app.get("/admin", (req, res) => {
+  throw new ExpressError(403, "Access to admin is forbidden");
+});
+
 //Error Handling Middleware-->
 // app.use((err, req, res, next) => {
 //   console.log("======");
