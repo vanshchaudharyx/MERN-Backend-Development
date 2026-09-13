@@ -66,16 +66,20 @@ The repository is organized according to the different stages of my backend lear
 ```text
 MERN-Backend-Development/
 │
-├── Node/
+├── Error Handling/
 ├── Express/
-├── REST/
-├── Node with SQL/
-├── MongoDB/
-├── MongoDB With Express/
 ├── Miscellaneous/
+├── Middlewares/
+├── MongoDB With Express/
+├── MongoDB/
+├── Node with SQL/
+├── Node/
+├── REST/
+├── fruits/
 │
 ├── .gitignore
 ├── README.md
+├── script.js
 └── ...
 ```
 
