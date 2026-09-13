@@ -9,3 +9,55 @@ app.use((err,req,res,next)=>{
     console.log(err.stack);
     res.status(500).send("Something broke!");
 });
+
+Problem without wrapAsync
+
+You have:
+
+app.get("/chats/:id", async (req, res, next) => {
+    let { id } = req.params;
+
+    let chat = await Chat.findById(id);
+
+    res.render("show.ejs", { chat });
+});
+
+Suppose Chat.findById(id) throws an error.
+
+With async functions, we need to make sure that error reaches:
+
+app.use((err, req, res, next) => {
+    // error handling
+});
+wrapAsync
+
+We create a function:
+
+function wrapAsync(fn) {
+    return function(req, res, next) {
+        fn(req, res, next).catch(next);
+    };
+}
+What does it do?
+
+It takes an async route function:
+
+async (req, res) => {
+    // some async work
+}
+
+and automatically catches its error:
+
+.catch(next)
+
+So:
+
+Async Route
+     ↓
+Error occurs
+     ↓
+.catch(next)
+     ↓
+next(err)
+     ↓
+Error-handling middleware
