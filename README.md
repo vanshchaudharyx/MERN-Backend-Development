@@ -75,10 +75,13 @@ MERN-Backend-Development/
 ├── Node with SQL/
 ├── Node/
 ├── REST/
+├── Relationships in Mongo/
 ├── fruits/
 │
 ├── .gitignore
 ├── README.md
+├── package.json
+├── package-lock.json
 ├── script.js
 └── ...
 ```
