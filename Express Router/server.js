@@ -4,7 +4,20 @@ const users = require("./routes/user.js"); //We require it but we also use it.
 const posts = require("./routes/post.js");
 const cookieParser = require("cookie-parser");
 
-app.use(cookieParser());
+// app.use(cookieParser());
+app.use(cookieParser("secretcode"));
+
+//Concept of signed cookies.
+app.get("/getsignedcookie", (req, res) => {
+  res.cookie("made-in", "India", { signed: true }); // Now we we will get cookie value like "s%3AIndia"
+  res.send("signed cookie sent");
+});
+// Verify signed cookies.
+app.get("/verify", (req, res) => {
+  console.log(req.cookies); //This print all unsigned cookies.
+  console.log(req.signedCookies); // If there is tampering with signed cookies then it prints empty object.
+  res.send("verified");
+});
 app.get("/getcookies", (req, res) => {
   res.cookie("greet", "hello"); //Greet is the name of cookie and hello is the value.
   res.send("Send you some cookies");
